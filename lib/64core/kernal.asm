@@ -23,7 +23,7 @@
   .label chrout_screen = $e716
 } 
 
-.pseudocommand kernal_plot_get column; row {
+.pseudocommand kernal_plot_get column: row {
   sec
   jsr kernal.plot
   .if (column.getType() != AT_NONE) {
@@ -33,7 +33,7 @@
     sty column
   }
 }
-.pseudocommand kernal_plot_set column; row {
+.pseudocommand kernal_plot_set column: row {
   clc
   ldx row
   ldy column
@@ -49,7 +49,7 @@
   }
 }
 
-.pseudocommand kernal_load load_or_verify; alternate_start  {
+.pseudocommand kernal_load load_or_verify: alternate_start  {
   lda load_or_verify
   .if (alternate_start.getType() != AT_NONE) {
     ldx extract_byte_argument(alternate_start, 0)
@@ -58,13 +58,13 @@
   jsr kernal.load
 }
 
-.pseudocommand kernal_save start_address; end_address; page_0_offset {
+.pseudocommand kernal_save start_address: end_address: page_0_offset {
   .if (page_0_offset.getType() == AT_NONE) {
     .eval page_0_offset = CmdArgument(AT_IMMEDIATE, $c1)
   } else .if (page_0_offset.getType() != AT_IMMEDIATE) {
     .error "only immediate mode is supported for page_0_offset argument"
   }
-  :poke16 page_0_offset.getValue(); start_address
+  :poke16 page_0_offset.getValue(): start_address
   lda #page_0_offset.getValue()
   ldx extract_byte_argument(end_address, 0)
   ldy extract_byte_argument(end_address, 1)
@@ -79,13 +79,13 @@
   jsr kernal.clear_screen
 }
 
-.pseudocommand kernal_setlfs logical_file_number; device_number; command {
+.pseudocommand kernal_setlfs logical_file_number: device_number: command {
   lda logical_file_number
   ldx device_number
   ldy command
   jsr kernal.setlfs
 }
-.pseudocommand kernal_setnam length; string_address {
+.pseudocommand kernal_setnam length: string_address {
   lda length
   ldx extract_byte_argument(string_address, 0)
   ldy extract_byte_argument(string_address, 1)
