@@ -1,6 +1,6 @@
-.importonce
-.import source "./common.asm"
-.import source "../lib/64core/memory.asm"
+#importonce
+#import "64core/common.asm"
+#import "64core/memory.asm"
 
 // see http://www.ffd2.com/fridge/docs/c64-diss.html#a3bf
 // and http://members.tripod.com/~Frank_Kontros/kernal/alpha.htm

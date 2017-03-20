@@ -1,9 +1,9 @@
-.import source "../lib/64core/encoding.asm"
-.import source "64spec.asm"
+#import "../lib/64core/encoding.asm"
+#import "64spec.asm"
 
-.import source "../lib/64core/kernal.asm"
-.import source "../lib/64core/memory.asm"
-.import source "./support/state_restoration.asm"
+#import "../lib/64core/kernal.asm"
+#import "../lib/64core/memory.asm"
+#import "./support/state_restoration.asm"
 
 .const TOP_LEFT_CHAR = $0400
 sfspec: :init_spec()

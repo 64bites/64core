@@ -1,4 +1,4 @@
-.importonce
+#importonce
 .function char(number) {
   .var chars = "@abcdefghijklmnopqrstuvwxyz[Ĝ]„ğ !\"#$%&'()*+,-./0123456789:;<=>?ŀABCDEFGHIJKLMNOPQRSTUVWXYZś\ŝŞ_`šŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹź{|}~ſƀƁƂƃƄƅƆƇƈƉƊƋƌƍƎƏƐƑƒƓƔƕƖƗƘƙƚƛƜƝƞƟƠ¡¢ƣ¤¥¦§¨©ª«¬ƭ®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ"
   .return chars.charAt(number)

@@ -1,6 +1,6 @@
-.importonce
-.import source "./common.asm"
-.import source "./math.asm"
+#importonce
+#import "64core/common.asm"
+#import "64core/math.asm"
 
 .pseudocommand mov source: dest {
   :_mov 1: source: dest

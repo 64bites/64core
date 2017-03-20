@@ -1,5 +1,5 @@
-.importonce
-.import source "./common.asm"
+#importonce
+#import "64core/common.asm"
 
 .macro int24(value) {
   .fill bits_to_bytes(24), extract_byte(value, i) 
