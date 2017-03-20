@@ -5,7 +5,7 @@ sfspec: :init_spec()
   :finish_spec()
 
 .assert "setnam", { 
-  :kernal_setnam $1000; #$0102 
+  :kernal_setnam $1000: #$0102 
 }, {
   lda $1000
   ldx #<$0102

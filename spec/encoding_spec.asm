@@ -10,19 +10,18 @@ sfspec: :init_spec()
  
 char_generates_a_character_in_screencode_encoding_from_a_number:
   .for (var screencode = 0;screencode < 256; screencode++) {
-    :assert_equal #screencode; #["" + char(screencode)].charAt(0)
+    :assert_equal #screencode: #["" + char(screencode)].charAt(0)
   }
-
 pet_string_generates_a_character_in_petscii_encoding_from_a_screencode_char:
   .for (var screencode = 0;screencode < 128; screencode++) {
     :store_top_left_char
     :store_cursor_position
-    :kernal_plot_set #0; #0
+    :kernal_plot_set #0: #0
     :print_pet_string(pet_string("" + char(screencode)))
     :restore_cursor_position
-    :poke actual_char; TOP_LEFT_CHAR
+    :poke actual_char: TOP_LEFT_CHAR
     :restore_top_left_char
-    :assert_equal actual_char; #screencode 
+    :assert_equal actual_char: #screencode 
   }
 
   :finish_spec()

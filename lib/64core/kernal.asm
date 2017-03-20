@@ -1,5 +1,6 @@
 .importonce
 .import source "./common.asm"
+.import source "../lib/64core/memory.asm"
 
 // see http://www.ffd2.com/fridge/docs/c64-diss.html#a3bf
 // and http://members.tripod.com/~Frank_Kontros/kernal/alpha.htm
@@ -58,13 +59,13 @@
   jsr kernal.load
 }
 
-.pseudocommand kernal_save start_address: end_address: page_0_offset {
+.pseudocommand kernal_save start_address: end_address : page_0_offset {
   .if (page_0_offset.getType() == AT_NONE) {
     .eval page_0_offset = CmdArgument(AT_IMMEDIATE, $c1)
   } else .if (page_0_offset.getType() != AT_IMMEDIATE) {
     .error "only immediate mode is supported for page_0_offset argument"
   }
-  :poke16 page_0_offset.getValue(): start_address
+  :mov16 start_address : page_0_offset.getValue()
   lda #page_0_offset.getValue()
   ldx extract_byte_argument(end_address, 0)
   ldy extract_byte_argument(end_address, 1)

@@ -1,8 +1,9 @@
-.importonce
-.import source "./core64/common.asm"
-.import source "./core64/encoding.asm"
-.import source "./core64/kernal.asm"
-.import source "./core64/math.asm"
-.import source "./core64/memory.asm"
-.import source "./core64/version.asm"
+#importonce
+#import "./64core/breakpoints.asm"
+#import "./64core/common.asm"
+#import "./64core/encoding.asm"
+#import "./64core/kernal.asm"
+#import "./64core/math.asm"
+#import "./64core/memory.asm"
+#import "./64core/version.asm"
 

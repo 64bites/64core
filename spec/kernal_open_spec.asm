@@ -5,8 +5,8 @@ sfspec: :init_spec()
 
 write_to_and_read_from_file_using_open_and_chkout:
  
-  :kernal_setnam #[name_write_end - name_write]; #name_write
-  :kernal_setlfs #2; #8; #2
+  :kernal_setnam #[name_write_end - name_write]: #name_write
+  :kernal_setlfs #2: #8: #2
 
   :kernal_open
   :kernal_readst open_st
@@ -28,8 +28,8 @@ write_to_and_read_from_file_using_open_and_chkout:
 
   :kernal_clrchn
 
-  :kernal_setnam #[name_read_end - name_read]; #name_read
-  :kernal_setlfs #2; #8; #2
+  :kernal_setnam #[name_read_end - name_read]: #name_read
+  :kernal_setlfs #2: #8: #2
 
   :kernal_open
   :kernal_readst open_st
@@ -50,11 +50,11 @@ write_to_and_read_from_file_using_open_and_chkout:
 
   :kernal_clrchn
 
-  :assert_equal tmp; #'A'
-  :assert_equal tmp + 1; #'B'
-  :assert_equal tmp + 2; #'C'
+  :assert_equal tmp: #'A'
+  :assert_equal tmp + 1: #'B'
+  :assert_equal tmp + 2: #'C'
 
-  :assert_equal16 a_word; #$0102
+  :assert_equal16 a_word: #$0102
   :finish_spec()
 
 
